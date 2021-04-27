@@ -9,12 +9,9 @@ public class vehiclecontroller {
 	String matricula;
 	String marca;
 	String color;
-
+	Scanner tecla = new Scanner(System.in);
 	public void createCar() throws Exception {
-		Scanner tecla = new Scanner(System.in);
-
-		// Fase 1
-		System.out.println("\n" + " Milestone 1 :Fase 1" + "\n"); // crear cotxe
+		
 		boolean valmatricula = false;
 		do {
 			System.out.println("Introdueïx la MATRICULA del cotxe");
@@ -54,10 +51,8 @@ public class vehiclecontroller {
 		try {
 			Wheel r1 = new Wheel(marcaRodesTraseres, Double.parseDouble(diametreRodesTraseres));// roda dreta trasera
 			Wheel r2 = new Wheel(marcaRodesTraseres, Double.parseDouble(diametreRodesTraseres));// roda esquerra trasera
-			Wheel r3 = new Wheel(marcaRodesDavanteres, Double.parseDouble(diametreRodesDavanteres)); // roda dreta
-																										// davantera
-			Wheel r4 = new Wheel(marcaRodesDavanteres, Double.parseDouble(diametreRodesDavanteres)); // roda esquerra
-																										// davantera
+			Wheel r3 = new Wheel(marcaRodesDavanteres, Double.parseDouble(diametreRodesDavanteres)); // roda dreta davantera
+			Wheel r4 = new Wheel(marcaRodesDavanteres, Double.parseDouble(diametreRodesDavanteres)); // roda esquerra davantera
 
 			List<Wheel> RodesTraseres = new ArrayList<Wheel>();
 			RodesTraseres.add(r1);
@@ -78,7 +73,7 @@ public class vehiclecontroller {
 
 	public void createBike() throws Exception {
 		Scanner tecla = new Scanner(System.in);
-		System.out.println("\n" + " Milestone 1 :Fase 1" + "\n"); // crear cotxe
+		System.out.println("\n" + " Milestone 1 :Fase 1" + "\n"); // crear moto
 		boolean valmatricula = false;
 		do {
 			System.out.println("Introdueïx la MATRICULA de la Moto");
@@ -127,7 +122,65 @@ public class vehiclecontroller {
 
 		System.out.println(moto);
 
-		// tecla.close();
+		 //tecla.close();
 	}
+public void createTruck() throws Exception{
+	boolean valmatricula = false;
+	do {
+		System.out.println("Introdueïx la MATRICULA del Camió");
+		matricula = tecla.nextLine();
+		// verificar entrada matícula
+		if (matricula.matches("\\d{4}[a-zA-Z]{3}") || matricula.matches("\\d{4}[a-zA-Z]{2}")) {
+			valmatricula = true;
+		} else {
+			System.out
+					.println("Matrícula incorrecte, la matricula ha de tenir 4 numeros i dues o tres lletres !!!!");
+		}
+	} while (valmatricula == false);
+
+	System.out.println("Introdueïx la MARCA del camió");
+	marca = tecla.nextLine();
+	System.out.println("Introdueïx el COLOR del camió");
+	color = tecla.nextLine();
+
+	Truck camio = new Truck(matricula, marca, color);
+
+	// Rodes camió
+
+	String marcaRodesTraseres;
+	String diametreRodesTraseres;
+	String marcaRodesDavanteres;
+	String diametreRodesDavanteres;
+
+	System.out.println("Introdueïx la Marca rodes Traseres");
+	marcaRodesTraseres = tecla.nextLine();
+	System.out.println("Introdueïx el Diametre de les rodes Traseres");
+	diametreRodesTraseres = tecla.nextLine();
+	System.out.println("Introdueïx la Marca rodes Davanteres");
+	marcaRodesDavanteres = tecla.nextLine();
+	System.out.println("Introdueïx el Diametre de les rodes Davanteres");
+	diametreRodesDavanteres = tecla.nextLine();
+
+	try {
+		Wheel r1 = new Wheel(marcaRodesTraseres, Double.parseDouble(diametreRodesTraseres));// roda dreta trasera
+		Wheel r2 = new Wheel(marcaRodesTraseres, Double.parseDouble(diametreRodesTraseres));// roda esquerra trasera
+		Wheel r3 = new Wheel(marcaRodesDavanteres, Double.parseDouble(diametreRodesDavanteres)); // roda dreta davantera
+		Wheel r4 = new Wheel(marcaRodesDavanteres, Double.parseDouble(diametreRodesDavanteres)); // roda esquerra davantera
+
+		List<Wheel> RodesTraseres = new ArrayList<Wheel>();
+		RodesTraseres.add(r1);
+		RodesTraseres.add(r2);
+		List<Wheel> RodesDavanteres = new ArrayList<Wheel>();
+		RodesDavanteres.add(r3);
+		RodesDavanteres.add(r4);
+
+		camio.addWheels(RodesDavanteres, RodesTraseres);
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+
+	System.out.println(camio);
+	
+}
 
 }
