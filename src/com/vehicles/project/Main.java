@@ -9,8 +9,10 @@ public class Main {
 
 	public static void main(String[] args) throws Throwable  {
 		vehiclecontroller vc = new vehiclecontroller();
-		
-		String tecla ;// Per continuar fent operacions
+		TitularController tc = new TitularController();
+		Titular Titular1 =new Titular("Josep","Solano",1978, 02,15, 1, "cotxe", 1999, 05, 12, "Si", "No");
+		System.out.println(Titular1);
+		/*String tecla ;// Per continuar fent operacions
 		int opciomenu;
 		Scanner opcio = new Scanner(System.in);
 
@@ -53,7 +55,7 @@ public class Main {
 
 		} while (tecla.equals("s"));
 
-		opcio.close();
+		opcio.close();*/
 
 	}
 

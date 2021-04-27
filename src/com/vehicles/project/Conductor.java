@@ -1,11 +1,11 @@
 package com.vehicles.project;
 
 public class Conductor extends Persona {
-	private int id;
-	private String tipusLicencia;
-	private int agnoL;
-	private int mesL;
-	private int diaL;
+	protected int id;
+	protected String tipusLicencia;
+	protected int agnoL;
+	protected int mesL;
+	protected int diaL;
 	public Conductor(String nom, String cognoms, int agno, int mes, int dia, int id, String tipusLicencia, int agnoL,
 			int mesL, int diaL) {
 		super(nom, cognoms, agno, mes, dia);
