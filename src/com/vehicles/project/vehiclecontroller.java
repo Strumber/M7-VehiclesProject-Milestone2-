@@ -124,7 +124,7 @@ public class vehiclecontroller {
 
 		 //tecla.close();
 	}
-public void createTruck() throws Exception{
+	public void createTruck() throws Exception{
 	boolean valmatricula = false;
 	do {
 		System.out.println("Introdueïx la MATRICULA del Camió");

@@ -6,6 +6,7 @@ public class Conductor extends Persona {
 	protected int agnoL;
 	protected int mesL;
 	protected int diaL;
+	
 	public Conductor(String nom, String cognoms, int agno, int mes, int dia, int id, String tipusLicencia, int agnoL,
 			int mesL, int diaL) {
 		super(nom, cognoms, agno, mes, dia);
@@ -15,6 +16,7 @@ public class Conductor extends Persona {
 		this.mesL = mesL;
 		this.diaL = diaL;
 	}
+	
 	public int getId() {
 		return id;
 	}
@@ -44,6 +46,15 @@ public class Conductor extends Persona {
 	}
 	public void setDiaL(int diaL) {
 		this.diaL = diaL;
+	}
+	//crear to String
+
+	@Override
+	public String toString() {
+		return "Conductor [ id= " + id + " nom=" + nom + ", cognoms=" + cognoms + "]"
+				+ "\n Data Naixement :" + dia + "/" + mes+ "/"+agno 
+				+ "\n tipus Llicencia=" + tipusLicencia 
+				+ "\n Data caducitat Llicencia: " + agnoL + "/" + mesL + "/"+ diaL;
 	}
 	
 }

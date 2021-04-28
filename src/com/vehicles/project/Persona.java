@@ -6,6 +6,7 @@ public abstract class Persona {
 	protected int agno;
 	protected int mes;
 	protected int dia;
+	
 	public Persona(String nom, String cognoms, int agno, int mes, int dia) {
 		super();
 		this.nom = nom;
