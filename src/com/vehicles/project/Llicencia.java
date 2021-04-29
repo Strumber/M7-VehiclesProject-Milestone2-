@@ -7,19 +7,10 @@ public class Llicencia {
 	protected int agnoL;
 	protected int mesL;
 	protected int diaL;
-	
-	/*public Llicencia(int id, String tipusLicencia, String nomComplet, int agnoL, int mesL, int diaL) {
-		super();
-		this.id = id;
-		this.tipusLicencia = tipusLicencia;
-		this.nomComplet = nomComplet;
-		this.agnoL = agnoL;
-		this.mesL = mesL;
-		this.diaL = diaL;
-	}*/
+
 	public Llicencia(String tipusLicencia) {
 		this.tipusLicencia = tipusLicencia;
-		
+
 	}
 
 	public int getId() {
@@ -69,5 +60,5 @@ public class Llicencia {
 	public void setDiaL(int diaL) {
 		this.diaL = diaL;
 	}
-	
+
 }

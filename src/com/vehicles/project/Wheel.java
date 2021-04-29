@@ -4,17 +4,16 @@ public class Wheel {
 	private String brand;
 	private double diameter;
 
-	public Wheel(String brand, double diameter)throws Exception { //constructor
-		
+	public Wheel(String brand, double diameter) throws Exception { // constructor
+
 		this.brand = brand;
 		this.diameter = diameter;
 
-		if (diameter<0.4 || diameter >4) throw new Exception ("el diametre ha de ser superior a 0.4 i inferior a 4");
-					
-			System.out.println();
-		
-		
-		
+		if (diameter < 0.4 || diameter > 4)
+			throw new Exception("el diametre ha de ser superior a 0.4 i inferior a 4");
+
+		System.out.println();
+
 	}
 
 	public String getBrand() {
@@ -62,9 +61,5 @@ public class Wheel {
 			return false;
 		return true;
 	}
-	
-	
-
-	
 
 }
