@@ -15,7 +15,7 @@ public class ConductorController {
 	int dl;
 	Scanner tecla = new Scanner(System.in);
 		
-	public void crearConductor() throws Exception{
+	public void crearConductor(String Llic) throws Exception{
 		int idC=1;
 		Boolean valtl=false;
 		
@@ -32,8 +32,9 @@ public class ConductorController {
 		d=tecla.nextInt();
 		System.out.println("Introdueix el tipus de Licencia (cotxe,moto,camio");
 		do {
+			
 			tl=tecla.next();
-			if (tl.equalsIgnoreCase("cotxe")||tl.equalsIgnoreCase("moto")||tl.equalsIgnoreCase("camio")) {
+			if (tl.equalsIgnoreCase(Llic)) {
 				valtl=true;
 			}else {
 				System.out.println("Has introduït un tipus de licencia incorrecte, torna a introduïr");

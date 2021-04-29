@@ -53,7 +53,7 @@ public class Conductor extends Persona {
 		return "Conductor [ id= " + id + " nom=" + nom + ", cognoms=" + cognoms + "]"
 				+ "\n Data Naixement :" + dia + "/" + mes+ "/"+agno 
 				+ "\n tipus Llicencia=" + tipusLicencia 
-				+ "\n Data caducitat Llicencia: " + agnoL + "/" + mesL + "/"+ diaL;
+				+ "\n Data caducitat Llicencia: " + diaL + "/" + mesL + "/"+ agnoL;
 	}
 	
 }
