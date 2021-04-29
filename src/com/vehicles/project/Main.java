@@ -6,16 +6,16 @@ public class Main {
 	
 	public static void main(String[] args) throws Throwable {
 		vehiclecontroller vc = new vehiclecontroller();
-		ConductorController tc = new ConductorController();
+		ConductorController cc = new ConductorController();
 		System.out.println("M7 vehicles - Milestone 2");
-		//String tecla="n";
+		String tecla;
 		String Llicencia;
 		boolean validacio = false;
 		Titular Titular1 = new Titular("Josep", "Solano", 1978, 02, 15, 1, "cotxe", 1999, 05, 12, "Si", "No");
 		System.out.println(Titular1);
 		int opciomenu = 0;
 		Scanner opcio = new Scanner(System.in);
-		do {
+		
 			
 		
 			System.out.println("-------------------------------------");
@@ -27,22 +27,22 @@ public class Main {
 			System.out.println("-------------------------------------");
 
 			System.out.println("Selecciona:");
-			
+			do {
 			try {
 
 				opciomenu = opcio.nextInt();
 				validacio=true;
-				//tecla = "s";
+				
 			} catch (Exception e) {
-				System.out.println("Opció incorrecte selecciona 1, 2 o 3");
+				System.out.println("Opció incorrecte selecciona 1, 2 o 3"); 
+				opcio.nextLine();
 				validacio = false;
-				//opciomenu=0;
+				
 
 			}
-			//System.out.print("\n¿Vols tornar a fer una operació (S/N)?\n");
-			//tecla = opcio.next();
-		}while (validacio == false); 
-
+			
+		}while (!validacio); 
+			
 		switch (opciomenu) {
 		case 1:
 			if (opciomenu == 1) {
@@ -52,6 +52,7 @@ public class Main {
 					vc.createCar();
 				} else {
 					System.out.println("El titular no te la Llicencia adecuada");
+					
 				}
 			}
 			break;
@@ -79,43 +80,28 @@ public class Main {
 			break;
 
 		}
-
+		
 		System.out.println("-------------------------------------");
-		System.out.println("\nEl titula serà el conductor ? (S/N)\n");
-
-		opcio.close();
-
-		// tc.crearConductor();
-		/*
-		 * String tecla ;// Per continuar fent operacions int opciomenu; Scanner opcio =
-		 * new Scanner(System.in);
-		 * 
-		 * do { System.out.println("-------------------------------------");
-		 * System.out.println("M7 vehicles - Milestone 2");
-		 * System.out.println("-------------------------------------");
-		 * System.out.println("1  - Crear cotxe");
-		 * System.out.println("2  - Crear moto");
-		 * System.out.println("3  - Crear camió"); System.out.println("4  - Sortir");
-		 * opciomenu = opcio.nextInt();
-		 * 
-		 * if (opciomenu > 0 && opciomenu <= 4) { // Adaptar if al nombre d' opcions
-		 * 
-		 * switch (opciomenu) { case 1: vc.createCar(); break; case 2: vc.createBike();
-		 * break; case 3: vc.createTruck(); case 4: // ec.eliminarEdifici(); return; }
-		 * 
-		 * } else { System.out.println("Introdueïx una opció correcte"); }
-		 * 
-		 * System.out.println("_______________________________________"); //
-		 * System.out.println("Operacions amb edificis:"); //
-		 * System.out.println("________________________");
-		 * System.out.print("\n¿Vols tornar a fer una operació (S/N)?\n");
-		 * 
-		 * tecla = opcio.next();
-		 * 
-		 * } while (tecla.equals("s"));
-		 * 
-		 * opcio.close();
-		 */
+		System.out.println("\nEl titular serà el conductor ? (S/N)\n");
+		opcio.nextLine();
+		tecla = opcio.nextLine();
+		if (tecla.equalsIgnoreCase("s")) {
+			Conductor cTitular = new Conductor(Titular1.nom,Titular1.cognoms,Titular1.agno,
+					Titular1.mes,Titular1.dia,opciomenu, Titular1.tipusLicencia,Titular1.agnoL,
+					Titular1.mesL,Titular1.diaL);
+			System.out.println("El conductor sera el Titular : ");
+			System.out.println(cTitular);
+			
+		}else if(tecla.equalsIgnoreCase("n")) {
+				cc.crearConductor();
+		}else {
+			System.out.println("L' opcio escollida es incorrecte");
+		}
+		
+		
+		System.out.println("Fi programa");
+		
+		
 
 	}
 
